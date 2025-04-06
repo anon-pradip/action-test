@@ -1,7 +1,10 @@
 name: hello world
-on: [push]
+on:
+  push:
+    branches: [master]
+
 jobs:
-  run-name: 
+  run-name:
     runs-on: ubuntu-latest
     steps:
       - name: Displays hello world
