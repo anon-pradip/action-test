@@ -2,8 +2,6 @@ name: hello world
 on:
   push:
     branches: [master]
-  schedule:
-    - cron: "*/5 * * * *"
 
 jobs:
   run-name:
@@ -11,3 +9,11 @@ jobs:
     steps:
       - name: Displays hello world
         run: echo "Hello world"
+        
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        
+      - name: List all files
+        run: |
+          echo "This repo: ${{ github.repository }} contains the following files:"
+          tree
