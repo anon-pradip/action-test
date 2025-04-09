@@ -1,19 +1,12 @@
-name: hello world
-on:
-  push:
-    branches: [master]
+name: Matrix example
 
+on:
+  workflow_dispatch:
+  
 jobs:
-  run-name:
+  HELLO:
     runs-on: ubuntu-latest
     steps:
-      - name: Displays hello world
-        run: echo "Hello world"
-        
-      - name: Checkout
-        uses: actions/checkout@v4.2.2
-        
-      - name: List all files
+      - name: Step name
         run: |
-          echo "This repo: ${{ github.repository }} contains the following files:"
-          tree
+          echo "Hello"
