@@ -16,6 +16,6 @@ jobs:
         env:
           step_vars: Step variable
         run: |
-          echo "This is  global variable: ${{global_vars}}"
-          echo "This is job variable: ${{job_1.job_vars}}"
-          echo "This is step variable: ${{job_1.step_1.step_vars}}"
+          echo "This is  global variable: ${{emv.global_vars}}"
+          echo "This is job variable: ${{env.job_vars}}"
+          echo "This is step variable: ${{env.step_vars}}"
