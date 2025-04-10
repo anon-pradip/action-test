@@ -1,0 +1,21 @@
+name: varibles
+
+on:
+  workflow_dispatch:
+  
+env:
+  global_vars: Global variable
+  
+jobs:
+  job-1:
+    env:
+      job_vars: Job variable
+    runs-on: ubuntu-latest
+    steps:
+      - name: step_1
+        env:
+          step_vars: Step variable
+        run: |
+          echo "This is  global variable: ${{global_vars}}"
+          echo "This is job variable: ${{job_1.job_vars}}"
+          echo "This is step variable: ${{job_1.step_1.step_vars}}"
