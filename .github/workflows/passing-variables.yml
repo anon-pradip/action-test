@@ -9,7 +9,7 @@ jobs:
     steps:
         - name: Writing a variable
           id: generate-value
-          run: echo "My_value=Pradip" >> "$GITHUB_OUTPUT"
+          run: echo "My_value=Pradip" >> $GITHUB_OUTPUT
 
         - name: reading a variable
           run: echo "The value from above step ${{ steps.generate-value.outputs.My_value }}"
