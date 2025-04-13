@@ -19,7 +19,7 @@ jobs:
           run: |
             secret_value=any-secret-value
             echo "::add-mask::$secret_value
-            echo "SECRET_VALUE=$secret_value" >> GITHUB_OUTPUT
+            echo "SECRET_VALUE=$secret_value" >> $GITHUB_OUTPUT
 
         - name: use the masked value
           run: echo "the masked value is ${{ steps.masking.outputs.SECRET_VALUE }}"
