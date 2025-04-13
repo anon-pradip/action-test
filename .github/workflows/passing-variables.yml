@@ -18,7 +18,7 @@ jobs:
           id: masking
           run: |
             secret_value=any-secret-value
-            echo "::add-mask::$secret_value
+            echo "::add-mask::$secret_value"
             echo "SECRET_VALUE=$secret_value" >> $GITHUB_OUTPUT
 
         - name: use the masked value
