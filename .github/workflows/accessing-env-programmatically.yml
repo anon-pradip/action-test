@@ -1,0 +1,17 @@
+name: Accessing the env variables set in github actions to another file
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout to codebase
+        uses: actions/checkout@v4.2.2
+
+      - name: configure env variable
+        run: echo "MY_ENV_VAR=my-env-value" >> $GITHUB_ENV
+
+      - name: execute the js file
+        run: node main.js
