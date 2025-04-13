@@ -1,0 +1,15 @@
+name: Passing values betn steps
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Writing a variable
+          id: generate-value
+          run: echo "My_value=Pradip" >> "$GITHUB_OUTPUT"
+
+        - name: reading a variable
+          run: echo "The value from above step $steps.generate-value.outputs.My_value"
